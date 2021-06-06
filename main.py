@@ -14,7 +14,12 @@ if option == "one":
     os.system(cmd + link)
 
 elif option == "multi":
-    print(option)
+    multi_names = input("""
+'https://youtu.be/code123','https://youtu.be/code321'
+Provide the songs in as previously stated (no spaces!)
+>""").split(",")
+    for link in multi_names:
+        os.system(cmd + link)
 
 else:
     raise TypeError("Incorrect input")
