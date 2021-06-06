@@ -24,6 +24,16 @@ Provide the songs as previously stated (no spaces!)
         song_count += 1
         print("checked song #" + str(song_count))
 
+    option_2 = input("""
+Remove the trailing code(s) on the file name?
+"yes" or "no" 
+>""").lower()
+    if option_2 == "no":
+        pass
+    elif option_2 == "yes":
+        "do something"
+    else:
+        raise ValueError("Incorrect input")
 
 else:
     raise TypeError("Incorrect input")
