@@ -17,8 +17,8 @@ if option == "one":
 
 elif option == "multi":
     multi_names = input("""
-https://youtu.be/code123,https://youtu.be/code321
-Provide the songs as previously stated (no spaces, apostrophes, or quotes!)
+https://youtu.be/code123, https://youtu.be/code321
+Provide the songs as previously stated (no apostrophes, or quotation marks!)
 >""").split(",")
     song_count = 0
     for link in multi_names:
@@ -45,7 +45,14 @@ Remove the trailing code(s) on the file name?
             if "Destination" in result:
                 file_name.append(result.split(":")[1][1:-1])
 
-        print(file_name)
+        file_name = file_name[0]
+        file_name = file_name.replace("web", "mp3")
+
+        new_name = file_name[0:-16]
+        new_name = new_name + ".mp3"
+
+        os.system(f"""rename "{file_name}" "{new_name}" """)
+        print(f""" Old file name:"{file_name}", New file name: "{new_name}" """)
 
     else:
         raise ValueError("Incorrect input")
