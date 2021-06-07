@@ -37,8 +37,16 @@ Remove the trailing code(s) on the file name?
 >""").lower()
     if option_2 == "no":
         pass
+
     elif option_2 == "yes":
-        print(testing)
+        testing = testing.decode('utf-8', errors="backslashreplace").split('\n')
+        file_name = []
+        for result in testing:
+            if "Destination" in result:
+                file_name.append(result.split(":")[1][1:-1])
+
+        print(file_name)
+
     else:
         raise ValueError("Incorrect input")
 
