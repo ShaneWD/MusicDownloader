@@ -31,10 +31,10 @@ elif option_2 == "yes":
     file_name = []
     for result in testing:
         if "Destination" in result:
-            file_name.append(result.split(":")[1][1:-1])
+            file_name.append(result.split(":")[1][1:-4])
 
     file_name = file_name[0]
-    file_name = file_name.replace("web", "mp3")
+    file_name = file_name + "mp3"
 
     new_name = file_name[0:-16]
     new_name = new_name + ".mp3"
