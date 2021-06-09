@@ -43,6 +43,6 @@ for link in multi_names:
 
     # Give useful information to the user
     print(
-        f""" -> Old file name:"{file_name}"
- -> New file name: "{new_name}" """)
-    print(f"""CHECKED SONG #{str(song_count)} \n""")
+        f""" -> Old file name: "{file_name}"
+ -> New file name: "{new_name}" 
+CHECKED SONG #{str(song_count)} \n""")
