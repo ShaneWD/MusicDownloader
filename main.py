@@ -17,7 +17,6 @@ for link in multi_names:
         shell=True)
 
     song_count += 1
-    print("CHECKED SONG #" + str(song_count))
 
     data = raw_data.decode('utf-8', errors="backslashreplace").split('\n')
     file_name = []
@@ -32,5 +31,7 @@ for link in multi_names:
     new_name = new_name + ".mp3"
 
     os.system(f"""rename "{file_name}" "{new_name}" """)
-    print(f"""Old file name:"{file_name}", New file name: "{new_name}" """)
-
+    print(
+        f""" -> Old file name:"{file_name}"
+ -> New file name: "{new_name}" """)
+    print(f"""CHECKED SONG #{str(song_count)} \n""")
