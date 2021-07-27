@@ -5,9 +5,10 @@ import subprocess
 cmd = "youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "
 
 multi_names = input("""
-https://youtu.be/code123, https://youtu.be/code321
-Provide the songs as previously stated (no apostrophes, or quotation marks!)
->""").split(",")
+https://youtu.be/code123 https://youtu.be/code321
+Provide the songs as previously stated (no spaces, apostrophes, nor quotation marks!)
+>""").split(" ")
+print("-------->" + str(multi_names))
 song_count = 0
 for link in multi_names:
     os.system(cmd + link)
