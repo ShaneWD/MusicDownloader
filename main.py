@@ -28,9 +28,14 @@ for link in multi_names:
 
         # Add data follows the word "Destination"
         if "Destination" in result:
-            file_name.append(result.split(":")[1][1:-4])
-            # removes the initial space & the "webm" text
-            # upload that information to a list
+            if result[-4:].lower() == "webm":
+                file_name.append(result.split(":")[1][1:-4])
+                # removes the initial space & the "webm" text
+                # uploads that information to a list
+            else:
+                file_name.append(result.split(":")[1][1:-3])
+                # removes the initial space & the "m4a" text
+                # uploads that information to a list
 
     # Only need the first result
     file_name = file_name[0]
