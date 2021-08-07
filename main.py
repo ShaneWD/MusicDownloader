@@ -5,15 +5,16 @@ import subprocess
 cmd = "youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "
 
 multi_names = input("""
-https://youtu.be/code123 https://youtu.be/code321
+https://youtu.be/IaMxH8aU1fZ https://www.youtube.com/watch?v=XsKdV3uL3bH
 Provide the songs as previously stated (no spaces, apostrophes, nor quotation marks!)
 >""").split(" ")
 
 song_count = 0
 for link in multi_names:
+    # Initiates the download
     os.system(cmd + link)
 
-    # Record the listed information that it provides while running the download command
+    # Records the listed information that it provides while running the following command
     raw_data = subprocess.check_output(
         ["youtube-dl", "-f", "bestaudio", "--extract-audio",
          "--audio-format", "mp3", "--audio-quality", "0", link],
@@ -21,20 +22,21 @@ for link in multi_names:
 
     song_count += 1
 
-    # Break the raw data at every new line
+    # separate the raw data at every new line
     data = raw_data.decode('utf-8', errors="backslashreplace").split('\n')
     file_name = []
     for result in data:
 
-        # Add data follows the word "Destination"
+        # Add all data following the word "Destination"
         if "Destination" in result:
             if result[-4:].lower() == "webm":
                 file_name.append(result.split(":")[1][1:-4])
+                # Only saves info past the colon
                 # removes the initial space & the "webm" text
                 # uploads that information to a list
             else:
                 file_name.append(result.split(":")[1][1:-3])
-                # removes the initial space & the "m4a" text
+                # removes the "m4a" text
                 # uploads that information to a list
 
     # Only need the first result
