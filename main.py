@@ -6,7 +6,8 @@ cmd = "youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-qualit
 
 multi_names = input("""
 https://youtu.be/IaMxH8aU1fZ https://www.youtube.com/watch?v=XsKdV3uL3bH
-Provide the songs as previously stated (no spaces, apostrophes, nor quotation marks!)
+
+Provide the songs as stated above (no  apostrophes, or quotation marks! Differentiate with a space.)
 >""").split(" ")
 
 song_count = 0
