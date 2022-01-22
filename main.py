@@ -2,7 +2,7 @@ import os
 import subprocess
 
 # command for downloading YouTube videos as MP3 with best audio quality
-cmd = "youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "
+cmd = "yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "
 
 multi_names = input("""
 https://youtu.be/IaMxH8aU1fZ https://www.youtube.com/watch?v=XsKdV3uL3bH
@@ -17,7 +17,7 @@ for link in multi_names:
 
     # Records the listed information that it provides while running the following command
     raw_data = subprocess.check_output(
-        ["youtube-dl", "-f", "bestaudio", "--extract-audio",
+        ["yt-dlp", "-f", "bestaudio", "--extract-audio",
          "--audio-format", "mp3", "--audio-quality", "0", link],
         shell=True)
 
@@ -45,7 +45,7 @@ for link in multi_names:
     file_name = file_name + "mp3"
 
     # Remove the unneeded code from the filename
-    new_name = file_name[0:-16]
+    new_name = file_name[0:-18]
     new_name = new_name + ".mp3"
 
     os.system(f"""rename "{file_name}" "{new_name}" """)
