@@ -2,7 +2,7 @@ import os
 import subprocess
 
 # command for downloading YouTube videos as MP3 with best audio quality
-cmd = "yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -4"
+cmd = "yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -4 "
 
 multi_names = input("""
 https://youtu.be/IaMxH8aU1fZ https://www.youtube.com/watch?v=XsKdV3uL3bH
